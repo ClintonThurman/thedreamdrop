@@ -1,0 +1,33 @@
+<!-- Header -->
+<siteheader></siteheader>
+
+<!-- Message -->
+<div style="position:relative;z-index: 1;">
+    <div style="position:absolute;top:5px;width:100%;">
+        <alert ng-repeat="alert in alerts" ng-animate="'alertdisplay'" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+    </div>
+</div>
+
+<!-- Dream Summary -->
+<dreamfield initialized="initialized" entry="entry.dream" dream="initData.dream"></dreamfield>
+
+<!-- Categories and Tags -->
+<div ng-repeat="category in initData.categories">
+    <tagselector label="{{category.value[locale]}}" tags="category.tagObjs" selectedtags="entry.selectedTags" tagkey="{{category.key}}" locale="{{locale}}"></tagselector>
+</div>
+
+<!-- Signature -->
+<signature entry="entry.signature"></signature>
+
+<!-- Submit Button -->
+<div class="text-right" style="margin:10px 0;">
+    <button class="btn" id="getBtn"
+            ng-click="postEntry()"
+            ng-disabled="isSubmitDisabled()"
+            ng-class="{'disabled': isSubmitDisabled(), 'btn-primary': !isSubmitDisabled()}">Submit</button>
+</div>
+
+<!-- Footer -->
+<sitefooter></sitefooter>
+
+

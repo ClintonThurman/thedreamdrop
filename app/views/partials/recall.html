@@ -1,0 +1,29 @@
+<!-- Header -->
+<siteheader></siteheader>
+
+<!-- Message -->
+<div style="position:relative;z-index: 1;">
+    <div style="position:absolute;top:5px;width:100%;">
+        <alert ng-repeat="alert in alerts" ng-animate="'alertdisplay'" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+    </div>
+</div>
+
+<!-- Dreams -->
+<div ng-repeat="entry in dreams">
+
+    <div class="well">
+        <div class="media">
+            <div class="media-body">
+                <h4 class="media-heading">{{entry.dateCreated | displayDate}}</h4>
+                <blockquote>
+                    <p>{{entry.dream}}</p>
+                    <small><cite title="Source Title">{{entry.location | displayLocation}}</cite></small>
+                </blockquote>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<sitefooter></sitefooter>

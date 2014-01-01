@@ -1,0 +1,8 @@
+<div style="margin-bottom: 10px;">
+    <h2>Dream summary</h2>
+    <textarea class="form-control" placeholder="I was dreaming that..." xng-focus="initialized" style="width:100%;height:100px;margin-bottom: 5px;" id="dream"
+              ui-keypress="{13:'enterKeyCallback($event)'}" ng-model="dream"></textarea>
+    <div class="text-right atv">
+        <span class="badge" ng-class="remainingClass()">remaining: {{maxLength - dream.length}}</span>
+    </div>
+</div>

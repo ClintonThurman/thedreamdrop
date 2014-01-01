@@ -1,0 +1,12 @@
+<div>
+    <h2>{{label}}</h2>
+
+    <div>
+        <span style="margin-right:5px;margin-bottom:5px;display:inline-block" ng-repeat="item in tags">
+            <button class="btn" ng-class="{'btn-info':!item.selected, 'btn-success':item.selected}" ng-click="selectTag(item)">
+                <i class="glyphicon glyphicon-white" ng-class="{'glyphicon-plus-sign':!item.selected, 'glyphicon-minus-sign':item.selected}"></i>
+                {{item.value[locale]}}
+            </button>
+        </span>
+    </div>
+</div>
