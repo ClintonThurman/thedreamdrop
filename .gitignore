@@ -1,5 +1,6 @@
 node_modules
 public
+.idea
 .tmp
 .sass-cache
 app/bower_components
