@@ -82,17 +82,25 @@ body {
 
 /************************************************************ ******************/
 
+@myHeaderFontSize: 32px;
+@myHeaderFontWeight: normal;
+@myHeaderDreamColor: #777;
+
 .my-header {
-  font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color:#557FAD;
+  color: #557FAD;
   text-rendering: optimizeLegibility;
+  display: inline-block;
+  margin-top: 2px;
+  padding-right: 6px;
 }
 
-.my-header a {
+.my-header, .my-header:hover {
   text-decoration: none;
 }
 
 .my-header .title-end {
+  font-size: @myHeaderFontSize;
+  font-weight: @myHeaderFontWeight;
   color: transparent;
   text-shadow: #557FAD 0 0 3px;
   filter: alpha(opacity=75);
@@ -101,6 +109,35 @@ body {
   opacity: 0.75;
 }
 
+.my-header .title-filler {
+  position: absolute;
+  top: (@myHeaderFontSize / 2.66666666666667);
+  left: (@myHeaderFontSize / 8);
+  width: (@myHeaderFontSize / 2.22222222222222);
+  height: (@myHeaderFontSize / 1.53846153846154);
+  background-color: @myHeaderDreamColor;
+  border-radius: (@myHeaderFontSize / 6.66666666666667);
+}
+
+.my-header .title-d-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.my-header .drop-wrapper {
+  position: absolute;
+  font-size: (@myHeaderFontSize / 2.22222222222222);
+  top: (@myHeaderFontSize / 2.22222222222222);
+  left: (@myHeaderFontSize / 6.66666666666667);
+
+  span {
+    color: #fff !important;
+  }
+}
+
 .my-header .title-center {
+  font-size: @myHeaderFontSize;
+  font-weight: @myHeaderFontWeight;
   text-shadow: #557FAD 0 0 2px;
+  color: @myHeaderDreamColor;
 }
