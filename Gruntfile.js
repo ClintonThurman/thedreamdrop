@@ -19,7 +19,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
 
         // Project settings
-        yeoman: {
+        thedreamdrop: {
             // configurable paths
             app: require('./bower.json').appPath || 'app',
             dist: 'public',
@@ -48,7 +48,7 @@ module.exports = function (grunt) {
         },
         watch: {
             js: {
-                files: ['{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js'],
+                files: ['{.tmp,<%= thedreamdrop.app %>}/scripts/{,*/}*.js'],
                 tasks: ['newer:jshint:all']
             },
             jsTest: {
@@ -57,10 +57,10 @@ module.exports = function (grunt) {
             },
             livereload: {
                 files: [
-                    '<%= yeoman.app %>/<%= yeoman.views %>/{,*//*}*.{html,jade}',
-                    '{.tmp,<%= yeoman.app %>}/styles/{,*//*}*.css',
-                    '{.tmp,<%= yeoman.app %>}/scripts/{,*//*}*.js',
-                    '<%= yeoman.app %>/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
+                    '<%= thedreamdrop.app %>/<%= thedreamdrop.views %>/{,*//*}*.{html,jade}',
+                    '{.tmp,<%= thedreamdrop.app %>}/styles/{,*//*}*.css',
+                    '{.tmp,<%= thedreamdrop.app %>}/scripts/{,*//*}*.js',
+                    '<%= thedreamdrop.app %>/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
                 ],
                 options: {
                     livereload: true
@@ -78,7 +78,7 @@ module.exports = function (grunt) {
                 }
             },
             styles: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
+                files: ['<%= thedreamdrop.app %>/styles/{,*/}*.css'],
                 tasks: ['newer:copy:styles', 'autoprefixer']
             },
             gruntfile: {
@@ -93,7 +93,7 @@ module.exports = function (grunt) {
                 reporter: require('jshint-stylish')
             },
             all: [
-                '<%= yeoman.app %>/scripts/{,*/}*.js'
+                '<%= thedreamdrop.app %>/scripts/{,*/}*.js'
             ],
             test: {
                 options: {
@@ -110,9 +110,9 @@ module.exports = function (grunt) {
                     dot: true,
                     src: [
                         '.tmp',
-                        '<%= yeoman.views %>/*',
-                        '<%= yeoman.dist %>/*',
-                        '!<%= yeoman.dist %>/.git*'
+                        '<%= thedreamdrop.views %>/*',
+                        '<%= thedreamdrop.dist %>/*',
+                        '!<%= thedreamdrop.dist %>/.git*'
                     ]
                 }]
             },
@@ -153,10 +153,10 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     src: [
-                        '<%= yeoman.dist %>/scripts/{,*/}*.js',
-                        '<%= yeoman.dist %>/styles/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-                        '<%= yeoman.dist %>/styles/fonts/*'
+                        '<%= thedreamdrop.dist %>/scripts/{,*/}*.js',
+                        '<%= thedreamdrop.dist %>/styles/{,*/}*.css',
+                        '<%= thedreamdrop.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+                        '<%= thedreamdrop.dist %>/styles/fonts/*'
                     ]
                 }
             }
@@ -166,44 +166,23 @@ module.exports = function (grunt) {
         // concat, minify and revision files. Creates configurations in memory so
         // additional tasks can operate on them
         useminPrepare: {
-            html: ['<%= yeoman.app %>/<%= yeoman.views %>/index.html',
-                '<%= yeoman.app %>/<%= yeoman.views %>/index.jade'],
+            html: ['<%= thedreamdrop.app %>/<%= thedreamdrop.views %>/index.html',
+                '<%= thedreamdrop.app %>/<%= thedreamdrop.views %>/index.jade'],
             options: {
-                dest: '<%= yeoman.dist %>'
+                dest: '<%= thedreamdrop.dist %>'
             }
         },
 
         // Performs rewrites based on rev and the useminPrepare configuration
         usemin: {
-            html: ['<%= yeoman.views %>/{,*/}*.html',
-                '<%= yeoman.views %>/{,*/}*.jade'],
-            css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+            html: ['<%= thedreamdrop.views %>/{,*/}*.html',
+                '<%= thedreamdrop.views %>/{,*/}*.jade'],
+            css: ['<%= thedreamdrop.dist %>/styles/{,*/}*.css'],
             options: {
-                assetsDirs: ['<%= yeoman.dist %>']
+                assetsDirs: ['<%= thedreamdrop.dist %>']
             }
         },
 
-        // The following *-min tasks produce minified files in the dist folder
-        imagemin: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= yeoman.app %>/images',
-                    src: '{,*/}*.{png,jpg,jpeg,gif}',
-                    dest: '<%= yeoman.dist %>/images'
-                }]
-            }
-        },
-        svgmin: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= yeoman.app %>/images',
-                    src: '{,*/}*.svg',
-                    dest: '<%= yeoman.dist %>/images'
-                }]
-            }
-        },
         htmlmin: {
             dist: {
                 options: {
@@ -218,9 +197,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: '<%= yeoman.app %>/<%= yeoman.views %>',
+                    cwd: '<%= thedreamdrop.app %>/<%= thedreamdrop.views %>',
                     src: ['*.html', 'partials/*.html'],
-                    dest: '<%= yeoman.views %>'
+                    dest: '<%= thedreamdrop.views %>'
                 }]
             }
         },
@@ -241,7 +220,7 @@ module.exports = function (grunt) {
         // Replace Google CDN references
         cdnify: {
             dist: {
-                html: ['<%= yeoman.views %>/*.html']
+                html: ['<%= thedreamdrop.views %>/*.html']
             }
         },
 
@@ -271,8 +250,8 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     dot: true,
-                    cwd: '<%= yeoman.app %>',
-                    dest: '<%= yeoman.dist %>',
+                    cwd: '<%= thedreamdrop.app %>',
+                    dest: '<%= thedreamdrop.dist %>',
                     src: [
                         '*.{ico,png,txt}',
                         '.htaccess',
@@ -283,13 +262,13 @@ module.exports = function (grunt) {
                 }, {
                     expand: true,
                     dot: true,
-                    cwd: '<%= yeoman.app %>/<%= yeoman.views %>',
-                    dest: '<%= yeoman.views %>',
+                    cwd: '<%= thedreamdrop.app %>/<%= thedreamdrop.views %>',
+                    dest: '<%= thedreamdrop.views %>',
                     src: '**/*.jade'
                 }, {
                     expand: true,
                     cwd: '.tmp/images',
-                    dest: '<%= yeoman.dist %>/images',
+                    dest: '<%= thedreamdrop.dist %>/images',
                     src: [
                         'generated/*'
                     ]
@@ -301,8 +280,8 @@ module.exports = function (grunt) {
                     dot: true,
                     dest: 'heroku',
                     src: [
-                        '<%= yeoman.dist %>/**',
-                        '<%= yeoman.views %>/**'
+                        '<%= thedreamdrop.dist %>/**',
+                        '<%= thedreamdrop.views %>/**'
                     ]
                 }, {
                     expand: true,
@@ -316,7 +295,7 @@ module.exports = function (grunt) {
             },
             styles: {
                 expand: true,
-                cwd: '<%= yeoman.app %>/styles',
+                cwd: '<%= thedreamdrop.app %>/styles',
                 dest: '.tmp/styles/',
                 src: '{,*/}*.css'
             }
@@ -332,8 +311,6 @@ module.exports = function (grunt) {
             ],
             dist: [
                 'copy:styles',
-                'imagemin',
-                'svgmin',
                 'htmlmin'
             ]
         },
@@ -344,9 +321,9 @@ module.exports = function (grunt) {
         // cssmin: {
         //   dist: {
         //     files: {
-        //       '<%= yeoman.dist %>/styles/main.css': [
+        //       '<%= thedreamdrop.dist %>/styles/main.css': [
         //         '.tmp/styles/{,*/}*.css',
-        //         '<%= yeoman.app %>/styles/{,*/}*.css'
+        //         '<%= thedreamdrop.app %>/styles/{,*/}*.css'
         //       ]
         //     }
         //   }
@@ -354,8 +331,8 @@ module.exports = function (grunt) {
         // uglify: {
         //   dist: {
         //     files: {
-        //       '<%= yeoman.dist %>/scripts/scripts.js': [
-        //         '<%= yeoman.dist %>/scripts/scripts.js'
+        //       '<%= thedreamdrop.dist %>/scripts/scripts.js': [
+        //         '<%= thedreamdrop.dist %>/scripts/scripts.js'
         //       ]
         //     }
         //   }
