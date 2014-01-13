@@ -1,6 +1,8 @@
 {
   "name": "dreamdropapp",
   "version": "0.0.0",
+  "description": "the dream drop",
+  "repository": "https://github.com/backlit/thedreamdrop.git",
   "dependencies": {
     "express": "~3.4.3",
     "mongoose": "~3.5.5",
