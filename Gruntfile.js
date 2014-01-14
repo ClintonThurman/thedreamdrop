@@ -225,15 +225,7 @@ module.exports = function (grunt) {
         },
 
         less: {
-            development: {
-                options: {
-                    paths: ["lib/less"]
-                },
-                files: {
-                    "app/styles/app.css": "lib/less/app.less"
-                }
-            },
-            production: {
+            dist: {
                 options: {
                     paths: ["lib/less"],
                     cleancss: true
@@ -350,8 +342,6 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-less');
-
     grunt.registerTask('express-keepalive', 'Keep grunt running', function() {
         this.async();
     });
@@ -390,7 +380,7 @@ module.exports = function (grunt) {
         'autoprefixer',
         'concat',
         'ngmin',
-        'less',
+        'less:dist',
         'copy:dist',
         'cdnify',
         'cssmin',
