@@ -358,7 +358,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('serve', function (target) {
         if (target === 'dist') {
-            return grunt.task.run(['build', 'express:prod', 'open', 'express-keepalive']);
+            return grunt.task.run(['build', 'express:prod', 'express-keepalive']);
         }
 
         grunt.task.run([
@@ -390,6 +390,7 @@ module.exports = function (grunt) {
         'autoprefixer',
         'concat',
         'ngmin',
+        'less',
         'copy:dist',
         'cdnify',
         'cssmin',
