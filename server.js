@@ -39,7 +39,8 @@ app.configure(function(){
   app.engine('html', require('ejs').renderFile);
   app.set('view engine', 'html');
 	app.use(express.logger('dev'));
-	app.use(express.bodyParser());
+    app.use(express.json());
+    app.use(express.urlencoded());
 	app.use(express.methodOverride());
 
   // Router needs to be last
