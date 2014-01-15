@@ -375,12 +375,12 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
+        'less:dist',
         'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
         'concat',
         'ngmin',
-        'less:dist',
         'copy:dist',
         'cdnify',
         'cssmin',
