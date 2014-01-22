@@ -1,7 +1,8 @@
-<div>
-    <h2>{{label}}</h2>
-
-    <div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{label}}</h3>
+    </div>
+    <div class="panel-body">
         <span style="margin-right:5px;margin-bottom:5px;display:inline-block" ng-repeat="item in tags">
             <button class="btn" ng-class="{'btn-info':!item.selected, 'btn-success':item.selected}" ng-click="selectTag(item)">
                 <i class="glyphicon glyphicon-white" ng-class="{'glyphicon-plus-sign':!item.selected, 'glyphicon-minus-sign':item.selected}"></i>
