@@ -1,0 +1,38 @@
+<!-- Header -->
+<siteheader></siteheader>
+
+<!-- Message -->
+<div style="position:relative;z-index: 1;">
+    <div style="position:absolute;top:5px;width:100%;">
+        <alert ng-repeat="alert in alerts" ng-animate="'alertdisplay'" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+    </div>
+</div>
+
+<!-- Dreams -->
+<div>this is the Log In page </div>
+
+
+<form role="form">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Dreamer ID</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="example: yourID_xxxxxxxxxx-yyyyyyyyyy">
+        <button class="btn btn-default">log in</button>
+    </div>
+
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email Address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="example: example@gmail.com">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">User Name</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="example: LA_Dreamer">
+    </div>
+
+
+</form>
+
+
+
+<!-- Footer -->
+<sitefooter></sitefooter>

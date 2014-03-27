@@ -17,6 +17,14 @@
                     templateUrl: 'partials/recall',
                     controller: 'RecallCtrl'
                 })
+                .when('/login', {
+                    templateUrl: 'partials/login',
+                    controller: 'LoginCtrl'
+                })
+                .when('/about', {
+                    templateUrl: 'partials/about',
+                    controller: 'RecallCtrl'
+                })
                 .otherwise({
                     redirectTo: '/'
                 });

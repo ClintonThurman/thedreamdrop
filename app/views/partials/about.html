@@ -1,0 +1,15 @@
+<!-- Header -->
+<siteheader></siteheader>
+
+<!-- Message -->
+<div style="position:relative;z-index: 1;">
+    <div style="position:absolute;top:5px;width:100%;">
+        <alert ng-repeat="alert in alerts" ng-animate="'alertdisplay'" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+    </div>
+</div>
+
+<!-- Dreams -->
+<div>this is the About page </div>
+
+<!-- Footer -->
+<sitefooter></sitefooter>

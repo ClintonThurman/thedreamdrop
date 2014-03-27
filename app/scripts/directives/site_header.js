@@ -26,6 +26,16 @@
                                 text: 'recall'
                             };
                             break;
+                        case '/login':
+                            scope.featurelink = {
+                                text: 'login'
+                            };
+                            break;
+                        case '/about':
+                            scope.featurelink = {
+                                text: 'about'
+                            };
+                            break;
                     }
                 },
                 templateUrl: 'partials/site_header.html',
